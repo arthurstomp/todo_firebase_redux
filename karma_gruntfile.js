@@ -1,23 +1,33 @@
 module.exports = {
   options: {
     basePath: '',
-    frameworks: ['jasmine'],
-    preprocessors: {
-      'spec/**/*.js': ['webpack']
-    },
+    files: [
+      'spec/**/*.js'
+    ],
     reporters: ['progress'],
     port: 9876,
     colors: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    concurrency: Infinity
+    browsers: ['PhantomJS'],
+    singleRun: true,
+    concurrency: Infinity,
+    frameworks: ['jasmine'],
+    preprocessors: {
+      'modules/**/*.js': ['webpack'],
+      'spec/**/*.js': ['webpack']
+    },
+    webpack: {
+      module: {
+        loaders: [{
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+          query: {
+            presets: ['es2015'],
+            plugins: ['transform-react-jsx']
+          }
+        }]
+      }
+    }
   },
-  unit: {
-    files: [{
-      src: [
-        'public/js/app.bundler.js',
-        'spec/**/*.js'
-      ]}
-    ]
-  }
+  unit: {}
 }

@@ -1,6 +1,6 @@
 var webpack = require('webpack')
 module.exports = {
-  dist: {
+  dev: {
     entry: './modules/index.js',
     output: {
       path: './public/js/',
@@ -16,6 +16,26 @@ module.exports = {
           plugins: ['transform-react-jsx']
         }
       }]
+    }
+  },
+  prod: {
+    entry: './modules/index.js',
+    output: {
+      path: './public/js',
+      filename: 'app.bundle.js'
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+          query: {
+            presets: ['es2015'],
+            plugins: ['transform-react-jsx']
+          }
+        }
+      ]
     },
     plugins: [
       new webpack.optimize.UglifyJsPlugin({

@@ -8,7 +8,22 @@ module.exports = function (grunt) {
     watch: {
       webpack: {
         files: ['modules/**/*.js'],
-        tasks: ['webpack']
+        tasks: ['webpack:dev']
+      }
+    },
+    'jshint': {
+      all: {
+        src: [
+          'Gruntfile.js',
+          'karma_gruntfile.js',
+          'webpack_gruntfile.js',
+          // 'modules/**/*.js'
+        ],
+        options: {
+          esversion: 6,
+          asi: true,
+          reporter: require('jshint-stylish')
+        }
       }
     },
     webpack: webpackGruntfile,
@@ -16,8 +31,9 @@ module.exports = function (grunt) {
   })
 
   grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-jsxhint')
   grunt.loadNpmTasks('grunt-webpack')
   grunt.loadNpmTasks('grunt-karma')
 
-  grunt.registerTask('default', ['webpack'])
+  grunt.registerTask('default', ['webpack:dev'])
 }

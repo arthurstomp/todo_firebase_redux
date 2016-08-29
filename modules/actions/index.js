@@ -1,4 +1,6 @@
+// Define variable the holds the next todo id.
 let nextTodoId = 0
+// Export addTodo action creator.
 export const addTodo = (text) => {
   return {
     type: 'ADD_TODO',
@@ -7,6 +9,7 @@ export const addTodo = (text) => {
   }
 }
 
+// Export setVisibilityFilter action creator.
 export const setVisibilityFilter = (filter) => {
   return {
     type: 'SET_VISIBILITY_FILTER',
@@ -14,6 +17,7 @@ export const setVisibilityFilter = (filter) => {
   }
 }
 
+// Export toggleTodo action creator.
 export const toggleTodo = (id) => {
   return {
     type: 'TOGGLE_TODO',

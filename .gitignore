@@ -54,3 +54,4 @@ dist/
 
 ### Ignore transpiled files ###
 public/js/*.bundle.js
+bundle/**/*
