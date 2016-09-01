@@ -2,7 +2,8 @@ module.exports = {
   options: {
     basePath: '',
     files: [
-      'spec/**/*.js'
+      'spec/**/*.js',
+      './node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js'
     ],
     reporters: ['progress'],
     port: 9876,

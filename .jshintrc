@@ -1,5 +1,19 @@
 {
-  "jasmine": true,
   "esversion": 6,
-  "asi": true
+  "asi": true,
+  "predef": [
+    "jasmine",
+    "describe",
+    "xdescribe",
+    "before",
+    "beforeEach",
+    "after",
+    "afterEach",
+    "it",
+    "xit",
+    "it",
+    "inject",
+    "expect",
+    "spyOn"
+  ]
 }
