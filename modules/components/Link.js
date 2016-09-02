@@ -1,3 +1,4 @@
+/* jshint ignore:start */
 import React, { PropTypes } from 'react'
 
 const Link = ({ active, children, onClick }) => {

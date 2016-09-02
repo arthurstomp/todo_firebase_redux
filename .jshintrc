@@ -1,6 +1,7 @@
 {
   "esversion": 6,
   "asi": true,
+  "jasmine": true,
   "predef": [
     "jasmine",
     "describe",
