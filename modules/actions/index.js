@@ -1,10 +1,8 @@
-// Define variable the holds the next todo id.
-let nextTodoId = 0
 // Export addTodo action creator.
-export const addTodo = (text) => {
+export const addTodo = (id,text) => {
   return {
     type: 'ADD_TODO',
-    id: nextTodoId++,
+    id,
     text
   }
 }
