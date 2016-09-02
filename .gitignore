@@ -55,3 +55,6 @@ dist/
 ### Ignore transpiled files ###
 public/js/*.bundle.js
 bundle/**/*
+
+### Firebase configuration ###
+firebase_config.js
