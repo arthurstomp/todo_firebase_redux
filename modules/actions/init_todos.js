@@ -18,22 +18,20 @@ const receiveInitTodos = (todos) => {
 }
 
 const initTodos = () => {
-  console.log('init todos')
   return dispatch => {
     dispatch(requestInitTodos)
     let todosRef = firebase.database().ref('/todos/')
-    todosRef.once('value', snapshot => {
+    todosRef.once('value').then(snapshot => {
       let todos = snapshot.val()
       let todosState = []
-      todos.map(todo => {
-        todosState.append({
-          text: todo.text,
-          completed: todo.completed
+      for (let todo in todos) {
+        todosState.push({
+          id: todo,
+          text: todos[todo].text,
+          completed: todos[todo].completed
         })
-      })
-      console.log('todos')
-      console.log(todos)
-      dispatch(receiveInitTodos(todos))
+      }
+      dispatch(receiveInitTodos(todosState))
     })
   }
 }

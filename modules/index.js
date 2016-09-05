@@ -6,7 +6,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import todoApp from './reducers'
-import App from './components/App'
+import AppInitializer from './containers/AppInitializer'
 
 const loggerMiddleware = createLogger()
 
@@ -20,7 +20,7 @@ let store = createStore(
 
 render(
   <Provider store={store}>
-    <App />
+    <AppInitializer />
   </Provider>,
   document.getElementById('root')
 )

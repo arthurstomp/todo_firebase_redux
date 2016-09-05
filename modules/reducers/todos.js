@@ -46,6 +46,8 @@ const todos = (state = [], action) => {
       )
     case INIT_TOODOS:
       return todo(undefined, action)
+    case RECEIVE_INIT_TOODOS:
+      return todo(undefined, action)
     default:
       return state
   }
